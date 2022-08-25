@@ -7,9 +7,9 @@
   "author": "Nathan Conlon <nathanec@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^14.18.26",
     "gts": "^3.1.0",
-    "typescript": "^4.7.4",
-    "@types/node": "^14.11.2"
+    "typescript": "^4.7.4"
   },
   "scripts": {
     "lint": "gts lint",
@@ -19,5 +19,9 @@
     "prepare": "npm.cmd run compile",
     "pretest": "npm.cmd run compile",
     "posttest": "npm.cmd run lint"
+  },
+  "dependencies": {
+    "colorts": "^0.1.63",
+    "typescript-collections": "^1.3.3"
   }
 }
