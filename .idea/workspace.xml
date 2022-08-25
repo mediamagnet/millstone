@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df199a5b-23b2-454c-81d2-21b153d83bc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sample_logs/perclog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logread.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logread.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/logread.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661441389799</updated>
       <workItem from="1661441395114" duration="2808000" />
-      <workItem from="1661446407808" duration="11527000" />
+      <workItem from="1661446407808" duration="12510000" />
     </task>
     <servers />
   </component>
