@@ -24,9 +24,8 @@ export async function logRead(filePath: string) {
       } else if (line.includes('Puncturing bad')) {
         failure++
         console.log(line.red);
-        let driveNum = line.match(/PD [0-9][0-9,A-F]/) ?? "";
-        driveNumPunc = line.match(/DevId.[[0-9,A-F]]/)
-        drives.push(String(driveNum));
+        let driveNum = line.match(/DevId[[0-9,A-F]]/) ?? "";
+        drives.concat(String(driveNum));
       }
     });
     await once(rl, 'close');
