@@ -9,6 +9,7 @@ let failure = 0;
 let info = 0;
 let drivesErrors = new Array<string>;
 let drivesInfo = new Array<string>;
+let drivesWarn = new Array<string>;
 let outWarn = new Array<string>;
 let outError = new Array<string>;
 
@@ -27,7 +28,7 @@ export async function logRead(filePath: string) {
         // console.log(line.yellow);
         outWarn.push(line + '\n');
         let driveNum = line.match(/PD [0-9][0-9,A-F]/) ?? "";
-        drivesErrors.push(String(driveNum));
+        drivesWarn.push(String(driveNum));
       } else if (line.includes('Puncturing bad')) {
         failure++
         // console.log(line.red);
@@ -42,6 +43,7 @@ export async function logRead(filePath: string) {
     });
     await once(rl, 'close');
     let uniqueErrors = [...new Set(outError)];
+    let uniqueErrDrive = [ ...new Set(drivesErrors)];
     let uniqueWarn = [...new Set(outWarn)];
     let uniqueVirt = [...new Set(drivesInfo)]
     console.log(String(uniqueWarn).replace(',0', '0').yellow);
@@ -56,10 +58,10 @@ export async function logRead(filePath: string) {
           String(uniqueVirt.filter(element => { return element !== '';})).cyan.bold);
     }
     if (warn >= 1 || failure >= 1) {
-      console.log("Errors were found on drives %s", String(uniqueDrives.filter(element => { return element !== '';})).underline.cyan);
+      console.log("Errors were found on drives %s", String(uniqueErrDrive.filter(element => { return element !== '';})).underline.cyan);
     }
     if (failure >= 1) {
-      console.log('ADVISE REPLACING DRIVES IN ARRAY PUNCTURE DETECTED'.red.underline);
+      console.log('ADVISE REPLACING DRIVES IN ARRAY PUNCTURE DETECTED ON DRIVES: %s'.red.underline, String(uniqueErrors.filter(element => { return element !== '';})));
     }
   } catch (err: any) {
     console.error(err.red);
